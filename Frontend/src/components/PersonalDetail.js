@@ -27,7 +27,7 @@ const PersonalDetail = () => {
     const finalData = { ...data, ...state};
 
     try {
-      const response = await fetch('${process.env.REACT_APP_API_URL}/personalDetail', {
+      const response = await fetch(`${process.env.REACT_APP_API_URL}/personalDetail`, {
         method: "POST",
         headers: {
           "Content-Type": "application/json"
