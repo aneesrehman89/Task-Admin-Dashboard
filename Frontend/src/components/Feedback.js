@@ -30,7 +30,7 @@ const Feedback = () => {
     reset();
     const {email, phone, title, feedback} = data;
     try {
-       await fetch ('http://localhost:8009/feedback',{
+       await fetch (`${process.env.REACT_APP_API_URL}/feedback`,{
         method: "POST",
         headers: {
           "Content-Type": "application/json",

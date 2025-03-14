@@ -36,7 +36,7 @@ const ProjectOverview = () => {
     const email = emp.email; 
 
     try {
-      const response = await fetch(`http://localhost:8009/tasks/${email}`, {
+      const response = await fetch(`${process.env.REACT_APP_API_URL}/tasks/${email}`, {
         method: 'DELETE',
         headers: {
           'Content-Type': 'application/json',

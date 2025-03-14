@@ -27,7 +27,7 @@ const PersonalDetail = () => {
     const finalData = { ...data, ...state};
 
     try {
-      const response = await fetch('http://localhost:8009/personalDetail', {
+      const response = await fetch('${process.env.REACT_APP_API_URL}/personalDetail', {
         method: "POST",
         headers: {
           "Content-Type": "application/json"
@@ -43,7 +43,7 @@ const PersonalDetail = () => {
         toast.success("User Register Successfully...");
         reset();
 
-        const userRes = await fetch(`http://localhost:8009/users/${finalData.email}`);
+        const userRes = await fetch(`${process.env.REACT_APP_API_URL}/users/${finalData.email}`);
         const empData = await userRes.json();
         console.log(userRes);
 

@@ -90,7 +90,7 @@ const Attendance = () => {
   // Function to save attendance to the backend
   const saveAttendanceToBackend = async () => {
     try {
-      const response = await fetch("http://localhost:8009/attendance", {
+      const response = await fetch("${process.env.REACT_APP_API_URL}/attendance", {
         method: "POST", // 
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify({ email, attendance }),
@@ -120,7 +120,7 @@ const Attendance = () => {
   const fetchAttendance = async () => {
     const email = emp.email;
     try {
-      const response = await fetch(`http://localhost:8009/attendances/${email}`);
+      const response = await fetch(`${process.env.REACT_APP_API_URL}/attendances/${email}`);
 
       if (response.ok) {
         const data = await response.json();

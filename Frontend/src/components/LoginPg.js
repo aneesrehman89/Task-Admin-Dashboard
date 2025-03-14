@@ -24,7 +24,7 @@ const LoginPg = () => {
     const { email, password } = data;
     
     try {
-      const LoginData = await fetch("http://localhost:8009/login", {
+      const LoginData = await fetch("${process.env.REACT_APP_API_URL}/login", {
         method: "POST",
         headers: {"Content-Type": "application/json",},
         body: JSON.stringify({email, password}),
@@ -38,7 +38,7 @@ const LoginPg = () => {
         toast.success("User Login Successfully...");
         reset();
 
-        const userRes = await fetch(`http://localhost:8009/users/${email}`);
+        const userRes = await fetch(`${process.env.REACT_APP_API_URL}/users/${email}`);
         const empData = await userRes.json();
         setemp(empData);
 

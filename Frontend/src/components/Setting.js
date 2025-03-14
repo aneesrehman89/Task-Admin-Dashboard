@@ -29,7 +29,7 @@ const Setting = () => {
 
   const onSubmit = async (data) => {
     try {
-      const response = await fetch('http://localhost:8009/personalDetail',{
+      const response = await fetch(`${process.env.REACT_APP_API_URL}/personalDetail`,{
         method: 'PUT',
         headers: {
           'Content-Type': 'application/json',

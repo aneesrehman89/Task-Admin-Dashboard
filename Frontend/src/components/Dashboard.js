@@ -22,7 +22,7 @@ const Dashboard = () => {
 //      let token = localStorage.getItem('userdatatoken');
 //      console.log("Token ",token); 
 
-//        const res = await fetch("http://localhost:8009/validuser",{
+//        const res = await fetch("${process.env.REACT_APP_API_URL}/validuser",{
 //         method: 'GET',
 //         headers: {
 //           'Content-Type': 'application/json',
@@ -117,7 +117,7 @@ const Dashboard = () => {
     try {
       updateTaskData(addTaskDetail,inProgress,complete);
       // setAddTaskDetail(dataUpdated);
-      await fetch(`http://localhost:8009/dashboard/${email}`, {
+      await fetch(`${process.env.REACT_APP_API_URL}/dashboard/${email}`, {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
@@ -138,7 +138,7 @@ const Dashboard = () => {
   const fetchTaskData = async () => {
     const email = emp.email;
     try {
-      const userTask = await fetch(`http://localhost:8009/tasks/${email}`);
+      const userTask = await fetch(`${process.env.REACT_APP_API_URL}/tasks/${email}`);
       const finalTask = await userTask.json();
       if (userTask.ok) {
         setAddTaskDetail(finalTask.data.addTaskDetail || []);

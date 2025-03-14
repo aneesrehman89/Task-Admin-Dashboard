@@ -1,17 +1,23 @@
-const express = require('express');
-const app = express();
-require("./db/conn");
-const router = require("./Controller/router");
+const express = require("express");
 const cors = require("cors");
+
+const app = express();
+require("./db/conn"); // Database connection
+const router = require("./Controller/router");
 const cookiParser = require("cookie-parser");
 
-app.use(express.json());  
-app.use(cors());       
-app.use(router);        
-app.use(cookiParser());
+const port = process.env.PORT || 8009;  // Use environment variable for port
 
+app.use(express.json());
+app.use(cors({ origin: "https://your-frontend-url.vercel.app", credentials: true })); 
+app.use(cookiParser());
+app.use(router);
+
+// Root endpoint for testing
 app.get("/", (req, res) => {
-  res.status(200).json({ message: "Server is running on Vercel 🚀" });
+    res.json({ message: "Server is running on Vercel 🚀" });
 });
 
-module.exports=app
+app.listen(port, () => {
+    console.log(`Server started on port ${port}`);
+});
