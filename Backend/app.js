@@ -9,7 +9,7 @@ const cookiParser = require("cookie-parser");
 const port = process.env.PORT || 8009;  // Use environment variable for port
 
 app.use(express.json());
-app.use(cors({ origin: "https://your-frontend-url.vercel.app", credentials: true })); 
+app.use(cors({ origin: "https://task-admin-dashboard-frontend.vercel.app", credentials: true }));
 app.use(cookiParser());
 app.use(router);
 
