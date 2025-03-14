@@ -1,4 +1,4 @@
- const express = require('express');
+const express = require('express');
 const router = new express.Router();
 const bcrypt = require('bcrypt');
 // const authenticate = require("../middleware/authenticate");
@@ -71,23 +71,6 @@ router.post("/login", async (req, res) => {
   }
 });
 
-// user valid
-// router.get("/validuser",authenticate, async(req, res)=>{
-//  console.log("done");
-// try { 
-//   const user = await userdb.findId(req.userId);
-
-//   if (!user) {
-//     return res.status(404).json({ error: "User not found" });
-//   }
-
-//  return res.status(201).json({status:201, user});
-  
-// } catch (error) {
-//   res.status(500).json({status:500,error});
-// }
-// })
-
 
 //for feedback
 router.post("/feedback", async (req, res) => {
@@ -147,8 +130,8 @@ router.put('/personalDetail', async(req, res)=>{
   try {
     const updatedUser = await userdb.findOneAndUpdate(
       { email }, // Filter by email
-      { fullName, phone, address, jdate, gender }, // Fields to update
-      { new: true, runValidators: true } // Return updated document
+      { fullName, phone, address, jdate, gender }, 
+      { new: true, runValidators: true } 
     );
 
     if (!updatedUser) {

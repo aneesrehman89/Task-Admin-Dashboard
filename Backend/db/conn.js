@@ -1,9 +1,8 @@
 const mongoose = require("mongoose");
+require("dotenv").config();
 
-const DB = "mongodb://localhost:27017/user"
+console.log("MONGO_URL from .env:", process.env.MONGO_URL); // Debugging line
 
-mongoose.connect(DB, { useNewUrlParser: true, useUnifiedTopology: true })
-.then(()=> console.log("DataBase Connected"))
-.catch((error)=>{
-  console.error("MongoDB connection error:", error);
-})
+mongoose.connect(process.env.MONGO_URL, { useNewUrlParser: true, useUnifiedTopology: true })
+  .then(() => console.log("Database Connected"))
+  .catch((error) => console.error("MongoDB connection error:", error));

@@ -39,18 +39,7 @@ const userSchema = new mongoose.Schema({
     type: String,
     required: true,
   },
-  // tokens: [
-  //   {
-  //     token: {
-  //       type: String,
-  //       required: true,
-  //     }
-  //   }
-  // ]
 });
-
-
-
 
 //token generation
 userSchema.methods.generateToken = async function() {
@@ -60,7 +49,7 @@ userSchema.methods.generateToken = async function() {
         userId: this._id.toString(),
         email: this.email,
       },
-      process.env.JWT_SECRET_KEY || JWT_SECRET_KEY, // Fallback to JWT_SECRET_KEY if not in environment variables
+      process.env.JWT_SECRET_KEY || JWT_SECRET_KEY, 
       {
         expiresIn: "1d",
       }
@@ -71,8 +60,6 @@ userSchema.methods.generateToken = async function() {
   }
 };
 
-
-// creating model for userDetail
 const userdb = mongoose.model("users", userSchema);
 
 module.exports = userdb;

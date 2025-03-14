@@ -1,6 +1,6 @@
 const mongoose = require("mongoose");
 
-// schema for Task
+
 const taskSchema = new mongoose.Schema({
   email: {
     type: String,
@@ -22,7 +22,6 @@ const taskSchema = new mongoose.Schema({
   { timestamps: true, type: String, format: Date }
 );
 
-// create model for task
 const Task = mongoose.model("Task", taskSchema);
 
 

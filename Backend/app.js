@@ -4,21 +4,14 @@ require("./db/conn");
 const router = require("./Controller/router");
 const cors = require("cors");
 const cookiParser = require("cookie-parser");
-const port = 8009;
 
-// Load environment variables from .env file
-// const dotenv = require('dotenv');
-// dotenv.config();
-
-app.use(express.json());  // Parses JSON requests
-app.use(cors());         // Handles Cross-Origin Resource Sharing
-app.use(router);         // Mounts the router for API routes
+app.use(express.json());  
+app.use(cors());       
+app.use(router);        
 app.use(cookiParser());
 
-// Use environment variable PORT or fallback to 8009
-// const PORT = process.env.PORT ;
-// console.log(">>><<<<>>>><<<<",process.env.PORT)
-
-app.listen(port, () => {
-  console.log(`Server started on port ${port}`);
+app.get("/", (req, res) => {
+  res.status(200).json({ message: "Server is running on Vercel 🚀" });
 });
+
+module.exports=app
