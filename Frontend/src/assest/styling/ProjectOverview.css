@@ -1,0 +1,249 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+.mainContainer {
+  width: calc(100% - 250px);
+  display: flex;
+  flex-direction: column;
+  height: calc(100vh - 12vh);
+  position: absolute;
+  top: 12vh;
+  right: 0;
+}
+
+.parentProjectOverview {
+  width: 100%;
+  display: flex;
+  justify-content: start;
+  align-items: start;
+}
+
+.ProjectOverviewCards {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 1.1rem;
+  padding: 7px 1.1rem;
+  margin-top: 0.5rem;
+}
+
+.ProjectOverviewCard {
+  width: 320px;
+  height: 150px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 2rem 1.1rem;
+  color: white;
+  border-radius: 14px;
+  background: linear-gradient(35deg, #3b6893, #0d1936);
+  box-shadow: 0 4px 8px 0 rgb(0, 0, 0, 0.4);
+}
+
+.projectCardContent {
+  display: flex;
+  flex-direction: column;
+  margin-left: 10px;
+}
+
+.number {
+  font-size: 2rem;
+  font-weight: 500;
+}
+
+.cardName {
+  font-size: 1.3rem;
+  font-weight: 600;
+}
+
+.cardIconBox {
+  font-size: 3rem;
+}
+
+.arrowIcon {
+  margin-top: 0.1rem;
+  color: #333;
+}
+
+.table {
+  width: 100%;
+  display: flex;
+  align-items: start;
+  gap: 1.1rem;
+  padding: 7px 1.1rem;
+  margin-top: 0.5rem;
+  color: #0d1936;
+}
+
+.projectOverviewContainer {
+  width: 100%;
+  height: 320px;
+  box-shadow: 0 4px 20px 0 rgba(0, 0, 0, 1);
+  padding: 1.1rem;
+  color: #0d1936;
+  border-radius: 14px;
+}
+
+.tableHeading {
+  width: 100%;
+  color: #0d1936;
+}
+
+.projectOverviewContainer table {
+  width: 100%;
+  margin-top: 0.6rem;
+  border-collapse: collapse;
+}
+
+.projectOverviewContainer thead td {
+  font-weight: 700;
+  color: #333;
+}
+
+.projectOverviewContainer table tr {
+  display: table;
+  width: 100%;
+  table-layout: fixed;
+  border-bottom: 1px solid rgba(0, 0, 0, 0.2);
+}
+
+.projectOverviewContainer tbody {
+  display: block;
+  height: 230px;
+  overflow-y: auto;
+  scrollbar-width: none;
+}
+
+tbody tr:hover {
+  background: rgb(192, 192, 192);
+}
+
+table tbody tr:last-child {
+  border-bottom: none;
+}
+
+.projectOverviewContainer td {
+  width: 100%;
+  padding: 9px 5px;
+}
+
+.projectOverviewContainer table tbody td:last-child {
+  white-space: nowrap;
+}
+
+.projectOverviewContainer table tbody td:last-child {
+  width: 15%;
+  border-bottom: none;
+}
+
+#second,
+#third,
+#statusData,
+#deadlineData {
+  width: 30%;
+}
+
+.projectOverviewContainer table thead td:last-child {
+  width: 15%;
+}
+
+.projectoverviewPagination {
+  width: 94%;
+  display: flex;
+  justify-content: end;
+  margin: 0.4rem 1rem;
+  padding: 0.6rem;
+}
+
+.projectoverviewPagination button {
+  padding: 0.1rem 0.3rem;
+  margin: 0px 0.3rem;
+}
+
+/*----------------------------------------- media query -------------------------------*/
+@media screen and (max-width: 991px) {
+  .ProjectOverviewCards {
+    flex-wrap: wrap;
+    align-items: start;
+    justify-content: flex-start;
+    gap: 0.7rem;
+    padding: 7px 0.6rem;
+  }
+
+  .ProjectOverviewCard {
+    width: 32%;
+    padding: 1.5rem 0.3rem;
+  }
+
+  .projectOverviewContainer td {
+    width: 70%;
+  }
+
+  #second,
+  #third,
+  #statusData,
+  #deadlineData {
+    width: 40%;
+  }
+
+  .table {
+    padding: 7px 0.6rem;
+  }
+}
+
+@media screen and (max-width: 767px) {
+  .ProjectOverviewCard {
+    width: 32%;
+  }
+
+  .ProjectOverviewCards {
+    align-items: start;
+    gap: 8px;
+  }
+
+  .projectCardContent {
+    margin-left: 1px;
+  }
+
+}
+
+@media screen and (max-width: 557px) {
+  .ProjectOverviewCard {
+    width: 48%;
+  }
+
+  .ProjectOverviewCards {
+    flex-wrap: wrap;
+  }
+
+  .projectCardContent {
+    margin-left: 10px;
+  }
+}
+
+@media screen and (max-width: 450px) {
+  .ProjectOverviewCard {
+    width: 95%;
+
+  }
+
+  .ProjectOverviewCards {
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+
+  .projectOverviewContainer {
+    padding: 1rem;
+  }
+  .projectOverviewContainer {
+    width: 100%;
+    height: 350px;
+  }
+  .projectOverviewContainer td {
+    width: 40%;
+}
+}

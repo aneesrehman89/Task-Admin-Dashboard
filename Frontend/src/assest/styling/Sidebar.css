@@ -1,0 +1,89 @@
+*{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+.sidebar{
+   width: 250px;
+   height: 100vh;
+   color: white;
+   position: fixed;
+   top: 0;
+   left: 0;
+   overflow-x: hidden;
+   overflow-y: auto;
+   z-index: 2;
+   background: linear-gradient(95deg, #3b6893, #0d1936 );
+}
+.sidebar ul li{
+  width: 100%;
+  display: flex;
+  flex-wrap:wrap;
+  align-items: center;
+  list-style: none;
+}
+.sidebar ul li:hover{
+  background: #0d1936;
+}
+.sidebar ul li:first-child{
+  width: 100%;
+  height: 12vh;
+  display: flex;
+  align-items: center;
+  line-height: 50px;
+  margin-bottom:12px; 
+  font-weight: 600;
+  font-size: 1rem;
+  border-bottom: 1px solid #fff; 
+}
+.sidebar ul li:first-child:hover{
+  background: none;
+}
+.sidebar .title{
+  width: 100%;
+  height: 60px;
+  display: flex;
+  align-items: center;
+  text-decoration: none;
+  color: white;
+  padding-left: 0.5rem;
+  font-size: 1rem;
+}
+.icon_company{
+  display: flex;
+  height: 30px;
+  min-width: 60px;
+  margin: 0px 14px;
+}
+.icon {
+  display: flex;
+  height: 30px;
+  min-width: 60px;
+  margin-right: 13px;
+}
+.is-active {
+  color: #ffffff; 
+  font-weight:700; 
+  background-color: #0d1936; 
+}
+#settingList{
+  position: absolute;
+  bottom: 4px ;
+}
+ 
+
+  /*------------------------------------- media query ----------------------------*/
+@media screen and (max-width: 991px) {
+  .sidebar{
+    width: 70px;
+  }
+    .listTitle{
+      display: none;
+    }
+}
+@media screen and (max-width: 767px) {
+
+}
+@media screen and (max-width: 567px) {
+   
+}
